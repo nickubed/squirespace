@@ -1,4 +1,5 @@
 // imports
 import { Footer, Header } from './layout';
+import { Card } from './Card';
 // exports
-export { Footer, Header };
+export { Card, Footer, Header };
