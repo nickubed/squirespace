@@ -70,7 +70,6 @@ export const App = () => {
             <Route path='/search' component={Search} />
         </>
     )
-   
 
     return (
         <div className='app'>

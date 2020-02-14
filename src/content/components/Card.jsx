@@ -3,21 +3,8 @@ import React from 'react';
 
 export const Card = props => {
 
-    let style;
-    if (props.i == 0) {
-        style = {
-            zIndex: props.index
-        }
-    } else {
-        style = {
-            zIndex: props.index * (-10),
-            marginTop: `${props.index}em`,
-            marginLeft: `${props.index}em`
-        }
-    }
-
     return (
-        <div className='card' style={style}>
+        <div className='card' >
             <img className='card-img' src='https://www.placecage.com/200/300' alt='' />
             <div className='card-section'>
                 <h4>Name: </h4>
