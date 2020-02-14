@@ -59,6 +59,7 @@ export const App = () => {
         }
     }
 
+<<<<<<< HEAD
     let content = ( 
         <>
             <Route exact path='/' component={Landing} />
@@ -71,6 +72,30 @@ export const App = () => {
         </>
     )
    
+=======
+    let content;
+    if (user) {
+        content = ( 
+            <>
+                <Route exact path='/' component={Landing} />
+                <Route path='/signin' render={() => <SignIn updateUser={updateUser} user={user} />} />
+                <Route path='/signup' render={() => (
+                    <SignUp updateUser={updateUser} user={user} />
+                )} />
+                <Route path="/profile" component={Landing} />
+            </>
+        )
+    } else {
+        content = (
+            <>
+                <Header />
+                <Route exact path='/' component={Home} />
+                <Route path='/search' component={Search} />
+                <Footer />
+            </>
+        )
+    }
+>>>>>>> 29fb4060a0b49f57a48e21de9410599f5c72bd27
 
     return (
         <div className='app'>
