@@ -59,31 +59,18 @@ export const App = () => {
         }
     }
 
-    let content;
-    if (user) {
-        content = ( 
-            <>
-                <Route exact path='/' component={Landing} />
-                <Route path='/signin' render={() => <SignIn updateUser={updateUser} user={user} />} />
-                <Route path='/signup' render={() => (
-                    <SignUp updateUser={updateUser} user={user} />
-                )} />
-                <Route path="/profile" component={Landing} />
-                <Route path='/search' component={Search} />
-            </>
-        )
-    } else {
-        content = (
-            <>
-                <Route exact path='/' component={Home} />
-                <Route path='/signin' render={() => <SignIn updateUser={updateUser} user={user} />} />
-                <Route path='/signup' render={() => (
-                    <SignUp updateUser={updateUser} user={user} />
-                )} />
-                <Route path='/search' component={Search} />
-            </>
-        )
-    }
+    let content = ( 
+        <>
+            <Route exact path='/' component={Landing} />
+            <Route path='/signin' render={() => <SignIn updateUser={updateUser} user={user} />} />
+            <Route path='/signup' render={() => (
+                <SignUp updateUser={updateUser} user={user} />
+            )} />
+            <Route path="/profile" component={Landing} />
+            <Route path='/search' component={Search} />
+        </>
+    )
+   
 
     return (
         <div className='app'>
