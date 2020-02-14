@@ -53,9 +53,8 @@ export const SignIn = props => {
 
     return (
         <div className='sign-in'>
-            <div className='auth-header'></div>
             <div className='auth-main'>
-                <form onSubmit={login}>
+                <form className='sign-in-form' onSubmit={login}>
                     <FontAwesomeIcon className='logo-shield' icon={faUserShield} size='10x' />
                     <h1 className='logo-text'>SquireSpace</h1>
                     <p className="danger">{message}</p>
@@ -79,7 +78,6 @@ export const SignIn = props => {
                     <button className='cta-btn'>Open Pigeon Cage</button>
                 </form>
             </div>
-            <div className='auth-footer'></div>
         </div>
     )
 };

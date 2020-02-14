@@ -6,6 +6,9 @@ import { faHandMiddleFinger, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 export const Card = props => {
 
+    let back;
+    let backStyle;
+
     return (
         <div className='card' >
             <div className='card-inner' style={props.style}>
@@ -25,11 +28,11 @@ export const Card = props => {
                     </div>
                     <div className='card-response'>
                         <FontAwesomeIcon className='card-response-icon' icon={faHandMiddleFinger} size='3x' onClick={props.handleLeft} /> 
-                        <FontAwesomeIcon className='card-response-icon' icon={faHeart} size='3x' />
+                        <FontAwesomeIcon className='card-response-icon' icon={faHeart} size='3x' onClick={props.handleRight} />
                     </div>
                 </div>
-                <div className='card-back'>
-
+                <div className='card-back' style={props.backStyle}>
+                    {props.back}
                 </div>
             </div>
         </div>

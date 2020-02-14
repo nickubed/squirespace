@@ -10,11 +10,6 @@
     align-items: center;
 }
 // auth pages
-.auth-footer, .auth-header {
-    height: 10vh;
-    width: 100%;
-    background-color: $dark-shade;
-}
 .auth-input {
     display: flex;
     flex-direction: row;
@@ -42,12 +37,17 @@
     align-items: center;
 }
 .sign-in, .sign-up {
-    height: 100%;
-    width: 100%;
+    height: 80vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    border: 1px solid black;
+}
+.sign-in-form {
+    border: 1px solid black;
 }
 // home page
 .home-bot, .home-top {
@@ -79,21 +79,13 @@
 
 // landing page
 .landing {
-    height: 100%;
-    width: 100%;
+    height: 80vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: $primary;
-}
-.landing-main {
-    text-align: center;
-}
-.landing-header, .landing-footer {
-    height: 10vh;
-    width: 100%;
-    background-color: $dark-shade;
 }
 // search
 .search-container {

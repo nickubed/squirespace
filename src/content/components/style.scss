@@ -6,12 +6,15 @@
     position: absolute;
     height: 60vh;
     width: 80vw;
-    box-shadow: 0 0 50px $dark-shade;
+    perspective: 500px;
 }
 .card-inner {
     height: 100%;
     width: 100%;
+    box-shadow: 0 0 50px $dark-shade;
     position: absolute;
+    transition: transform 1.3;
+    transform-style: preserve-3d;
 }
 .card-front, .card-back {
     height: 100%;
@@ -23,6 +26,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
 }
 .card-img {
     height: 25vh;
@@ -55,6 +65,12 @@
     color: $dark-shade;
     border: 1px solid $dark-shade;
     border-radius: 50px;
+}
+.card-back-fu {
+    color: $dark-accent;
+}
+.card-back-lv {
+    color: red;
 }
 // layout
 .footer, .header {
