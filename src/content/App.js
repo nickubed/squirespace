@@ -9,6 +9,16 @@ import './pages/style.scss';
 import './components/style.scss';
 
 export const App = () => {
+
+    const [user, setUser] = useState();
+
+    let content;
+    if (user) {
+        content = (
+            
+        )
+    }
+
     return (
         <div className='app'>
             {/* <Landing /> */}
