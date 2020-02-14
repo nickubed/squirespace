@@ -31,6 +31,7 @@ export const Search = () => {
                 style={style}
                 handleLeft={handleLeft}
             />
+
         </div>
     )
 };
