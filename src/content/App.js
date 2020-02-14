@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 // pages
-import { Home, Landing, SignIn, SignUp } from './pages';
+import { Home, Landing, Search, SignIn, SignUp } from './pages';
 import { Footer, Header } from './components';
 // styling
 import './style.scss';
@@ -69,6 +69,7 @@ export const App = () => {
                     <SignUp updateUser={updateUser} user={user} />
                 )} />
                 <Route path="/profile" component={Landing} />
+                <Route path='/search' component={Search} />
             </>
         )
     } else {
@@ -79,6 +80,7 @@ export const App = () => {
                 <Route path='/signup' render={() => (
                     <SignUp updateUser={updateUser} user={user} />
                 )} />
+                <Route path='/search' component={Search} />
             </>
         )
     }

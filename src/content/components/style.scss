@@ -1,5 +1,35 @@
 // imports
 @import '../styles/palette.scss';
+// cards
+.card {
+    margin: 0 auto;
+    position: absolute;
+    height: 60vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 50px $dark-shade;
+}
+.card-img {
+    margin-bottom: 1em;
+    height: 25vh;
+    width: 50vw;
+    border: 3px solid $dark-shade;
+    border-radius: 100px;
+}
+.card-section {
+    height: 3vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+}
+.card-bio {
+    height: 22vh;
+    width: 70vw;
+    text-align: left;
+}
 // layout
 .footer, .header {
     height: 10vh;
