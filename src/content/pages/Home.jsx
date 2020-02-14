@@ -15,6 +15,8 @@ export const Home = props => {
         icon = (<img className="large-icon" alt="Knight Icon" src="https://res.cloudinary.com/briezh/image/upload/v1581714265/knight_icon_pfbz7f.png" />)
     }
 
+    const backgroundColor = {backgroundColor:'#A162E8',color:'#F7F8F5'}
+
     return (
         <div className='page home'>
             <div className='home-top'>
@@ -33,7 +35,7 @@ export const Home = props => {
                 <div className='home-bio-container'>
                     <h2>About {props.user.name} {icon}</h2>
                     <h4>{props.user.bio}</h4>
-                    <button className="contact-button">
+                    <button className="contact-button" style={backgroundColor}>
                         <h3>
                             <img 
                                 src="https://res.cloudinary.com/briezh/image/upload/v1581713634/clipart-pigeon-silhouette_iryng6.png" 

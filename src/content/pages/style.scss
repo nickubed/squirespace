@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    color: $dark-shade;
 }
 // auth pages
 .auth-input {
@@ -73,7 +74,26 @@
     border: 3px solid $dark-shade;
     border-radius: 100px;
 }
-
+.icon {
+    max-width: 20px;
+    height: auto;
+    
+}
+.large-icon {
+    max-width: 40px;
+    height: auto;
+}
+.home-bio-container {
+    margin: 0 20px;
+}
+.home-bio-container h2 {
+    text-align: center;
+}
+.contact-button {
+    background-color: #ccc;
+    color: royalblue;
+    border-radius: 5px;
+}
 // landing page
 .landing {
     height: 80vh;
@@ -91,22 +111,3 @@
     width: 90vw;
 }
 // Profle page styles
-.icon {
-    max-width: 20px;
-    height: auto;
-}
-.large-icon {
-    max-width: 40px;
-    height: auto;
-}
-.home-bio-container {
-    margin: 0 20px;
-}
-.home-bio-container h2 {
-    text-align: center;
-}
-.contact-button {
-    background-color: #ccc;
-    color: royalblue;
-    border-radius: 5px;
-}

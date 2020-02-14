@@ -104,7 +104,7 @@ export const Search = () => {
         setTimeout(returnRight, 2000)
     }
     let returnLeft = () => {
-        setData(data.slice(1))
+        setData(data.length? data.slice(1): [])
         setStyle({
             transform: 'rotateY(0deg)',
             transition: '.8s'
@@ -112,7 +112,8 @@ export const Search = () => {
     }
 
     let returnRight = () => {
-        setData(data.slice(1))
+        
+        setData(data.length? data.slice(1): [])
         setStyle({
             transform: 'rotateY(0deg)',
             transition: '.8s'
@@ -129,6 +130,8 @@ export const Search = () => {
                     bio={data[0].bio}
                     handleLeft={handleLeft}
                     handleRight={handleRight}
+                    id={data[0].id}
+                    img={data[0].img}
                     name={data[0].name}
                     style={style}
                 />

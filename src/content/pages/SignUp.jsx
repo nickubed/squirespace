@@ -123,6 +123,7 @@ export const SignUp = props => {
                     <option value="Adventure">Adventure</option>
                 </select> 
             </label>
+            <button className='cta-btn' onClick={updatePhase}>Next</button>
             </div>
         )
     } else {
@@ -154,6 +155,7 @@ export const SignUp = props => {
                     onChange={e => setAge(e.target.value)} 
                 />
             </label>
+            <button className='cta-btn' onClick={signup}>Obtain Pidgeon</button>
             </div>
         )
     }

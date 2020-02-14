@@ -13,7 +13,7 @@ export const Card = props => {
         <div className='card' >
             <div className='card-inner' style={props.style}>
                 <div className='card-front'>
-                    <img className='card-img' src='https://www.placecage.com/200/300' alt='' />
+                    <img className='card-img' src={props.img} alt='' />
                     <div className='card-section'>
                         <h4>Name: </h4>
                         <h4 className='card-filler'>{props.name}</h4>
@@ -27,8 +27,8 @@ export const Card = props => {
                         <p>{props.bio}</p>
                     </div>
                     <div className='card-response'>
-                        <FontAwesomeIcon className='card-response-icon' icon={faHandMiddleFinger} size='3x' onClick={(e) => props.handleLeft(e, '')} /> 
-                        <FontAwesomeIcon className='card-response-icon' icon={faHeart} size='3x' onClick={(e) => props.handleRight(e, '')} />
+                        <FontAwesomeIcon className='card-response-icon' icon={faHandMiddleFinger} size='3x' onClick={(e) => props.handleLeft(e, props.id)} /> 
+                        <FontAwesomeIcon className='card-response-icon' icon={faHeart} size='3x' onClick={(e) => props.handleRight(e, props.id)} />
                     </div>
                 </div>
                 <div className='card-back' style={props.backStyle}>
