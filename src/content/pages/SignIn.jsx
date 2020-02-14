@@ -75,7 +75,7 @@ export const SignIn = props => {
                             onChange={e => setPigeonCageKey(e.target.value)} 
                         />
                     </label>
-                    <button className='cta-btn'>Open Pigeon Cage</button>
+                    <button type='submit' className='cta-btn'>Open Pigeon Cage</button>
                 </form>
             </div>
         </div>

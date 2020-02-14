@@ -17,6 +17,7 @@
     align-items: center;
 }
 .auth-input-field {
+    // margin: -1em;
     height: 5vh;
     width: 50vw;
     font-size: 1.2em;
@@ -44,10 +45,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 1px solid black;
-}
-.sign-in-form {
-    border: 1px solid black;
 }
 // home page
 .home-bot, .home-top {

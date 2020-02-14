@@ -10,6 +10,7 @@ export const SignUp = props => {
     const [bio, setBio] = useState('');
     const [name, setName] = useState('');
     const [pic, setPic] = useState('');
+    const [phase, setPhase] = useState(0);
     const [pigeon, setPigeon] = useState('');
     const [pigeon_cage_key, setPigeonCageKey] = useState('');
     const [message, setMessage] = useState('');
@@ -63,16 +64,108 @@ export const SignUp = props => {
         return <Redirect to="/profile" />
     }
 
+    const updatePhase = () => {
+        setPhase(phase + 1)
+    }
+
+    let content;
+    if (phase === 0) {
+        content = (
+            <div>
+                <label className='auth-input'>
+                    <h4>Thy Name: </h4>
+                    <input 
+                        className='auth-input-field' 
+                        value={name}
+                        onChange={e => setName(e.target.value)} 
+                    />
+                </label>
+                <label className='auth-input'>
+                    <h4>Thy Noble Pigeon's Name: </h4>
+                    <input 
+                        className='auth-input-field' 
+                        value={pigeon}
+                        onChange={e => setPigeon(e.target.value)} 
+                    />
+                </label>
+                <label className='auth-input'>
+                    <h4>Thy Pigeon Cage Key: </h4>
+                    <input 
+                        className='auth-input-field auth-password' 
+                        type='password' 
+                        value={pigeon_cage_key}
+                        onChange={e => setPigeonCageKey(e.target.value)} 
+                    />
+                </label>
+                <button className='cta-btn' onClick={updatePhase}>Next</button>
+            </div>
+        )
+    } else if (phase === 1) {
+        content = (
+            <div>
+            <label className='auth-input'>
+                <h4>Thou art a: </h4>
+                <select 
+                    className='auth-input-field' 
+                    onChange={e => setType(e.target.value)}>
+                    <option value="Squire">Squire</option>
+                    <option value="Knight">Knight</option>
+                    <option value="Adventurer">Adventurer</option>
+                </select> 
+            </label>
+            <label className='auth-input'>
+                <h4>Thou Seeketh: </h4>
+                <select 
+                    className='auth-input-field' 
+                    onChange={e => setSeeking(e.target.value)}>
+                    <option value="Squire">Squire</option>
+                    <option value="Knight">Knight</option>
+                    <option value="Adventure">Adventure</option>
+                </select> 
+            </label>
+            </div>
+        )
+    } else {
+        content = (
+            <div>
+            <label className='auth-input'>
+                <h4>Thy Biography: </h4>
+                <textarea 
+                    className='auth-input-field' 
+                    value={bio}
+                    onChange={e => setBio(e.target.value)} 
+                ></textarea>
+            </label>
+            <label className='auth-input'>
+                <h4>Thy Self-Portrait: </h4>
+                <input 
+                    className='auth-input-field' 
+                    type="url"
+                    value={pic}
+                    onChange={e => setPic(e.target.value)} 
+                />
+            </label>
+            <label className='auth-input'>
+                <h4>Thy Age: </h4>
+                <input 
+                    className='auth-input-field' 
+                    type="number"
+                    value={age}
+                    onChange={e => setAge(e.target.value)} 
+                />
+            </label>
+            </div>
+        )
+    }
+
     return (
         <div className='sign-up'>
-            <div className='auth-header'></div>
                 <div className='auth-main'>
                     <form onSubmit={signup}>
-                        <FontAwesomeIcon className='logo-shield' icon={faUserShield} size='10x' />
-                        <h1 className='logo-text'>SquireSpace</h1>
+                        <FontAwesomeIcon className='logo-shield' icon={faUserShield} size='5x' />
                         <p>You must first register for a pigeon in order to apply to our adventurer services.</p>
                         <p className="danger">{message}</p>
-                        <label className='auth-input'>
+                        {/* <label className='auth-input'>
                             <h4>Thy Name: </h4>
                             <input 
                                 className='auth-input-field' 
@@ -143,10 +236,10 @@ export const SignUp = props => {
                                 onChange={e => setAge(e.target.value)} 
                             />
                         </label>
-                        <button type="submit" className='cta-btn'>Obtain Pigeon</button>
+                        <button type="submit" className='cta-btn'>Obtain Pigeon</button> */}
+                        { content }
                     </form>
                 </div>
-            <div className='auth-footer'></div>
         </div>
     )
 };
