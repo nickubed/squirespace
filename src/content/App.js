@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // pages
-import { Home, Landing, SignIn, SignUp } from './pages';
-import { Footer, Header } from './components';
+import { Home, Landing, Search, SignIn, SignUp } from './pages';
+import { Card, Footer, Header } from './components';
 // styling
 import './style.scss';
 import './pages/style.scss';
@@ -26,7 +26,8 @@ export const App = () => {
         content = (
             <>
                 <Header />
-                <Route path='/' component={Home} />
+                <Route exact path='/' component={Home} />
+                <Route path='/search' component={Search} />
                 <Footer />
             </>
         )
