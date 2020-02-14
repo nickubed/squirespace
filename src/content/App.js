@@ -66,7 +66,7 @@ export const App = () => {
             <Route path='/signup' render={() => (
                 <SignUp updateUser={updateUser} user={user} />
             )} />
-            <Route path="/profile" component={Landing} />
+            <Route path="/profile" render={() => <Home user={user} />} />
             <Route path='/search' component={Search} />
         </>
     )

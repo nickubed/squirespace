@@ -1,20 +1,43 @@
 // dependencies
-import React from 'react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
-export const Home = () => {
+export const Home = props => {
+    const [open, setOpen] = useState(false);
+
+    if (!props.user || !props.user.name) {
+        return <Redirect to="/signin" />
+    }
+
+    let icon = <img className="large-icon" alt="Squire Icon" src="https://res.cloudinary.com/briezh/image/upload/v1581714265/squire-icon_abw7aa.jpg" />
+    if (props.user.type == 'Knight') {
+        icon = (<img className="large-icon" alt="Knight Icon" src="https://res.cloudinary.com/briezh/image/upload/v1581714265/knight_icon_pfbz7f.png" />)
+    }
+
     return (
         <div className='page home'>
             <div className='home-top'>
-                <img className='home-top-img' src='https://www.placecage.com/200/300' alt='home pic' />
+                <img className='home-top-img' src={props.user.pic} alt='home pic' />
                 <div className='home-top-stats'>
-                    <h2>Name</h2>
-                    <h3>Age</h3>
+                    {icon}
+                    <h2>{props.user.type == 'Knight' ? 'Ser': 'Squire'} {props.user.name}</h2>
+                    <h3>{props.user.age} years old</h3>
+                    <h3>Seeking {props.user.seeking}</h3>
                 </div>
             </div>
             <div className='home-bot'>
                 <div className='home-bio-container'>
-                    <h2>Bio</h2>    
-                    <h4>Looking for love, life and indentured servitude.</h4>
+                    <h2>About {props.user.name} {icon}</h2>
+                    <h4>{props.user.bio}</h4>
+                    <button className="contact-button">
+                        <h3>
+                            <img 
+                                src="https://res.cloudinary.com/briezh/image/upload/v1581713634/clipart-pigeon-silhouette_iryng6.png" 
+                                alt="Pigeon Icon"
+                                className="icon" /> {props.user.pigeon}
+                        </h3> 
+                    </button>
+                    <h4>Contact Me Via Carrier Pigeon!</h4>
                 </div>
             </div>
         </div>
