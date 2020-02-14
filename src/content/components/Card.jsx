@@ -27,8 +27,8 @@ export const Card = props => {
                         <p>{props.bio}</p>
                     </div>
                     <div className='card-response'>
-                        <FontAwesomeIcon className='card-response-icon' icon={faHandMiddleFinger} size='3x' onClick={props.handleLeft} /> 
-                        <FontAwesomeIcon className='card-response-icon' icon={faHeart} size='3x' onClick={props.handleRight} />
+                        <FontAwesomeIcon className='card-response-icon' icon={faHandMiddleFinger} size='3x' onClick={(e) => props.handleLeft(e, '')} /> 
+                        <FontAwesomeIcon className='card-response-icon' icon={faHeart} size='3x' onClick={(e) => props.handleRight(e, '')} />
                     </div>
                 </div>
                 <div className='card-back' style={props.backStyle}>

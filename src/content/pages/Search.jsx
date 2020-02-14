@@ -16,7 +16,7 @@ export const Search = () => {
     const [data, setData] = useState(testData)
     const [style, setStyle] = useState({})
     
-    let handleLeft = e => {
+    let handleLeft = (e, matchedId) => {
         setBack(<FontAwesomeIcon icon={faHandMiddleFinger} size='5x' />)
         setBackStyle({
             backgroundColor: '#A162E8',
@@ -26,9 +26,32 @@ export const Search = () => {
             transform: 'rotateY(-180deg)',
             transition: '.8s'
         })
+        let token = localStorage.getItem('userToken')
+        fetch(`${process.env.REACT_APP_SERVER_URL}matches`, {
+            method: 'POST',
+            body: JSON.stringify({
+                swipe: 'skipped',
+                matchedUser: matchedId
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('YAY')
+            } 
+            else {
+                console.log('Err', response)
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
         setTimeout(returnLeft, 2000)
     } 
-    const handleRight = () => {
+    const handleRight = (e, matchedId) => {
         setBack(<FontAwesomeIcon icon={faHeart} size='5x' />) 
         setBackStyle({
             backgroundColor: '#A162E8',
@@ -38,6 +61,29 @@ export const Search = () => {
         setStyle({
             transform: 'rotateY(180deg)',
             transition: '.8s'
+        })
+        let token = localStorage.getItem('userToken')
+        fetch(`${process.env.REACT_APP_SERVER_URL}matches`, {
+            method: 'POST',
+            body: JSON.stringify({
+                swipe: 'matched',
+                matchedUser: matchedId
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('YAY')
+            } 
+            else {
+                console.log('Err', response)
+            }
+        })
+        .catch(err => {
+            console.log(err)
         })
         setTimeout(returnRight, 2000)
     }
