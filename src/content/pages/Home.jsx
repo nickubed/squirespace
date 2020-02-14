@@ -1,6 +1,7 @@
 // dependencies
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import MatchesDialog from '../components/MatchesDialog'
 
 export const Home = props => {
     const [open, setOpen] = useState(false);
@@ -24,6 +25,9 @@ export const Home = props => {
                     <h3>{props.user.age} years old</h3>
                     <h3>Seeking {props.user.seeking}</h3>
                 </div>
+            </div>
+            <div>
+                <MatchesDialog user={props.user} />
             </div>
             <div className='home-bot'>
                 <div className='home-bio-container'>
