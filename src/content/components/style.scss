@@ -1,0 +1,26 @@
+// imports
+@import '../styles/palette.scss';
+// layout
+.footer, .header {
+    height: 10vh;
+    width: 102%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $dark-shade;
+}
+.footer-icon {
+    color: $light-shade;
+}
+.header-logo {
+    color: $light-shade;
+}
+.header-title {
+    width: 50vw;
+    text-align: center;
+}
+.layout-content {
+    color: $light-shade;
+    font-size: 1.8em;
+}

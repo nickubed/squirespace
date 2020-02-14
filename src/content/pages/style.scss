@@ -1,0 +1,95 @@
+// imports
+@import '../styles/palette.scss';
+// pages
+.page {
+    max-height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+// auth pages
+.auth-footer, .auth-header {
+    height: 10vh;
+    width: 100%;
+    background-color: $dark-shade;
+}
+.auth-input {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+    align-items: center;
+}
+.auth-input-field {
+    height: 5vh;
+    width: 50vw;
+    font-size: 1.2em;
+    margin-left: .3em;
+    color: $dark-shade;
+}
+.auth-email {
+    margin-left: 2.1em;
+}
+.auth-password {
+    margin-left: .5em;
+}
+.auth-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+.sign-in, .sign-up {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+// home page
+.home-top {
+    height: 20vh;
+    width: 100%;
+    text-align: center;
+}
+.profile-img {
+    height: 15vh;
+    width: 35vw;
+    border: 5px solid $dark-shade;
+    border-radius: 100px;
+}
+.home-main {
+    height: 20vh;
+    width: 60vw;
+    text-align: center;
+}
+.home-bottom {
+    height: 20vh;
+    text-align: center;
+}
+.home-hr {
+    margin-top: 2em;
+    width: 80vw;
+    color: $dark-shade;
+}
+// landing page
+.landing {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: $primary;
+}
+.landing-main {
+    text-align: center;
+}
+.landing-header, .landing-footer {
+    height: 10vh;
+    width: 100%;
+    background-color: $dark-shade;
+}
