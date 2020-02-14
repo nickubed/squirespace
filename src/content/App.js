@@ -68,6 +68,7 @@ export const App = () => {
             )} />
             <Route path="/profile" component={Landing} />
             <Route path='/search' component={Search} />
+            <Route path='/home' component={Home} />
         </>
     )
 
