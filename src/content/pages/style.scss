@@ -50,31 +50,33 @@
     align-items: center;
 }
 // home page
-.home-top {
-    height: 20vh;
+.home-bot, .home-top {
+    height: 39vh;
     width: 100%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.profile-img {
-    height: 15vh;
-    width: 35vw;
-    border: 5px solid $dark-shade;
+.home-top {
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid $dark-shade;
+}
+.home-top-left, .home-top-right {
+    height: 40vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.home-top-img {
+    height: 20vh;
+    width: 40vw;
+    border: 3px solid $dark-shade;
     border-radius: 100px;
 }
-.home-main {
-    height: 20vh;
-    width: 60vw;
-    text-align: center;
-}
-.home-bottom {
-    height: 20vh;
-    text-align: center;
-}
-.home-hr {
-    margin-top: 2em;
-    width: 80vw;
-    color: $dark-shade;
-}
+
 // landing page
 .landing {
     height: 100%;
