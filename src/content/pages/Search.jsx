@@ -119,18 +119,26 @@ export const Search = () => {
         })
     }
 
+    if (data.length) {
+        return (
+            <div className='page search'>
+                <Card 
+                    age={data[0].age}
+                    back={back}
+                    backStyle={backStyle}
+                    bio={data[0].bio}
+                    handleLeft={handleLeft}
+                    handleRight={handleRight}
+                    name={data[0].name}
+                    style={style}
+                />
+            </div>
+        )
+    }
     return (
-        <div className='page search'>
-            <Card 
-                age={data[0].age}
-                back={back}
-                backStyle={backStyle}
-                bio={data[0].bio}
-                handleLeft={handleLeft}
-                handleRight={handleRight}
-                name={data[0].name}
-                style={style}
-            />
+        <div className="page search">
+            Loading Matches...
         </div>
     )
+    
 };
