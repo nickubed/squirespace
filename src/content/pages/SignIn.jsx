@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserShield } from '@fortawesome/free-solid-svg-icons';
 
 export const SignIn = props => {
-    console.log('Yay')
     const [pigeon, setPigeon] = useState('');
     const [pigeon_cage_key, setPigeonCageKey] = useState('');
     const [message, setMessage] = useState('');
@@ -16,7 +15,6 @@ export const SignIn = props => {
     }, [pigeon, pigeon_cage_key])
 
     const login = (e) => {
-        console.log('login')
         e.preventDefault();
         fetch(`${process.env.REACT_APP_SERVER_URL}auth/login`, {
             method: 'POST',
@@ -50,7 +48,6 @@ export const SignIn = props => {
     }
 
     if (props.user && props.user.name) {
-        console.log('Hello')
         return <Redirect to="/profile" />
     }
 
@@ -63,7 +60,7 @@ export const SignIn = props => {
                     <h1 className='logo-text'>SquireSpace</h1>
                     <p className="danger">{message}</p>
                     <label className='auth-input'>
-                        <h4>Pigeon Name: </h4>
+                        <h4>Thy Noble Pigeon's Name: </h4>
                         <input 
                             className='auth-input-field' 
                             value={pigeon}
@@ -71,7 +68,7 @@ export const SignIn = props => {
                         />
                     </label>
                     <label className='auth-input'>
-                        <h4>Pigeon Cage Key: </h4>
+                        <h4>Thy Pigeon Cage Key: </h4>
                         <input 
                             className='auth-input-field auth-password' 
                             type='password' 
@@ -79,7 +76,7 @@ export const SignIn = props => {
                             onChange={e => setPigeonCageKey(e.target.value)} 
                         />
                     </label>
-                    <button className='cta-btn'>Sign In</button>
+                    <button className='cta-btn'>Open Pigeon Cage</button>
                 </form>
             </div>
             <div className='auth-footer'></div>
