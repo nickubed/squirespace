@@ -1,25 +1,25 @@
 // dependencies
 import React, { useEffect, useState } from 'react';
 // components
-import { Card } from '../components';
+import Cards, { Card } from 'react-swipe-card';
 // test data
 import { testData } from '../data/cardTestData';
 
 export const Search = () => {
-    let content = testData.map((item, i) => {
-        console.log(i)
-        return <Card key={i} 
-                    name={item.name}
-                    age={item.age}
-                    bio={item.bio}
-                    index={i} />
-    })
-
-    
 
     return (
         <div className='page search'>
-            {content}
+            <div className='search-container'>
+                <Cards onEnd={action('end')} className='cards'>
+                    {testData.map(item =>
+                        <Card
+                            onSwipeLeft={action('swipe left')}    
+                            onSwipeRight={action('swipe right')}>
+                                <h2>{item.name}</h2>
+                        </Card>
+                    )}
+                </Cards>
+            </div>
         </div>
     )
 };
