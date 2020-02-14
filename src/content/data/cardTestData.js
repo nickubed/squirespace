@@ -16,7 +16,7 @@ export const testData = [
     },
     {
         name: 'Nick',
-        age: NaN,
+        age: 15,
         bio: 'Significantly less interesting shit'
     }
 ];

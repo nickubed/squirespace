@@ -7,7 +7,12 @@ import { testData } from '../data/cardTestData';
 
 export const Search = () => {
     let content = testData.map((item, i) => {
-        return <Card />
+        console.log(i)
+        return <Card key={i} 
+                    name={item.name}
+                    age={item.age}
+                    bio={item.bio}
+                    index={i} />
     })
 
     

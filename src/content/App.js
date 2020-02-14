@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // pages
 import { Home, Landing, Search, SignIn, SignUp } from './pages';
-import { Card, Footer, Header } from './components';
+import { Footer, Header } from './components';
 // styling
 import './style.scss';
 import './pages/style.scss';
