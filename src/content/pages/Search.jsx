@@ -6,15 +6,31 @@ import { Card } from '../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandMiddleFinger, faHeart } from '@fortawesome/free-solid-svg-icons';
 // test data
-import { testData } from '../data/cardTestData';
+// import { testData } from '../data/cardTestData';
 
 export const Search = () => {
-
     const [back, setBack] = useState()
     const [backStyle, setBackStyle] = useState({})
     const [matches, setMatches] = useState([])
-    const [data, setData] = useState(testData)
+    const [data, setData] = useState([])
     const [style, setStyle] = useState({})
+
+    useEffect(() => {
+        let token = localStorage.getItem('userToken')
+        fetch(`${process.env.REACT_APP_SERVER_URL}matches/potentials`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(result => {
+            console.log('result', result)
+            setData(result.users)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }, [])
     
     let handleLeft = (e, matchedId) => {
         setBack(<FontAwesomeIcon icon={faHandMiddleFinger} size='5x' />)
@@ -88,8 +104,7 @@ export const Search = () => {
         setTimeout(returnRight, 2000)
     }
     let returnLeft = () => {
-        testData.shift()
-        setData(testData)
+        setData(data.slice(1))
         setStyle({
             transform: 'rotateY(0deg)',
             transition: '.8s'
@@ -97,8 +112,7 @@ export const Search = () => {
     }
 
     let returnRight = () => {
-        testData.shift()
-        setData(testData)
+        setData(data.slice(1))
         setStyle({
             transform: 'rotateY(0deg)',
             transition: '.8s'
